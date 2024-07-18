@@ -2,10 +2,12 @@ import { format, addDays } from 'date-fns';
 
 import DayTile from './DayTile';
 
+const DAYS_TO_SHOW = 5;
+
 const Calendar = () => {
   const today = new Date();
 
-  const daysArray = Array.from({ length: 10 }, (_, index) => {
+  const daysArray = Array.from({ length: DAYS_TO_SHOW }, (_, index) => {
     return addDays(today, index);
   });
 
@@ -20,7 +22,7 @@ const Calendar = () => {
   return (
     <div className='flex overflow-auto gap-4'>
       {formattedDaysArray.map(day => (
-        <DayTile key={day.id} date={day.date} day={day.dayName} />
+        <DayTile key={day.id} date={day.date} dayName={day.dayName} />
       ))}
     </div>
   );
