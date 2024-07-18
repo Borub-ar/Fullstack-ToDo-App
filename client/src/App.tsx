@@ -8,7 +8,7 @@ function App() {
       <img
         src='../public/images/mountain-background.jpg'
         alt='Image of mountains'
-        className='relative h-2/6 object-cover after:absolute after:inset-0 after:bg-black after:z-10'
+        className='relative h-2/6 object-cover'
       />
 
       <ToDoPanel></ToDoPanel>
