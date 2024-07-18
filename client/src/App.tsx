@@ -15,7 +15,10 @@ function App() {
 
       <footer className='mt-auto'>
         <p className='text-zinc-300 font-bold text-center p-4'>
-          Created by <a href='https://github.com/Borub-ar' className='text-emerald-400'>Kacper Barabasz</a>
+          Created by{' '}
+          <a href='https://github.com/Borub-ar' className='text-clr-primary'>
+            Kacper Barabasz
+          </a>
         </p>
       </footer>
     </main>
