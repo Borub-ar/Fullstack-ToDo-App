@@ -9,7 +9,7 @@ const ToDoPanel = () => {
         <p className='text-white text-xl font-bold'>Incoming Tasks</p>
       </div>
 
-      <div className='h-full grow'>
+      <div className='h-full grow p-5 overflow-hidden'>
         <Calendar />
       </div>
     </div>

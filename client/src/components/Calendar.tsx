@@ -1,18 +1,29 @@
 import { format, addDays } from 'date-fns';
 
+import DayTile from './DayTile';
+
 const Calendar = () => {
   const today = new Date();
 
-  const daysArray = Array.from({ length: 6 }, (_, index) => {
+  const daysArray = Array.from({ length: 10 }, (_, index) => {
     return addDays(today, index);
   });
 
-  return <div>{daysArray.map((day, index) => (
-        <div key={index} style={{ margin: '10px', padding: '10px', border: '1px solid #ccc', borderRadius: '5px' }}>
-          <h3>{format(day, 'EEEE')}</h3>
-          <p>{format(day, 'dd/MM/yyyy')}</p>
-        </div>
-      ))}</div>;
+  const formattedDaysArray = daysArray.map(day => {
+    return {
+      date: format(day, 'dd.MM.yy'),
+      dayName: format(day, 'EEEE'),
+      id: crypto.randomUUID(),
+    };
+  });
+
+  return (
+    <div className='flex overflow-auto gap-4'>
+      {formattedDaysArray.map(day => (
+        <DayTile key={day.id} date={day.date} day={day.dayName} />
+      ))}
+    </div>
+  );
 };
 
 export default Calendar;
