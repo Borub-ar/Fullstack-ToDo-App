@@ -5,6 +5,7 @@
 *,
 *::before,
 *::after {
+  font-family: 'Roboto Condensed', sans-serif;
   box-sizing: border-box;
 }
 
