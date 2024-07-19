@@ -1,5 +1,6 @@
-import Calendar from './Calendar';
-import IncomingTasks from './IncomingTasks';
+import Calendar from './Calendar/Calendar';
+import IncomingTasks from './IncomingTasks/IncomingTasksPanel';
+import CreateTaskPanel from './CreateTask/CreateTaskPanel';
 
 const ToDoPanel = () => {
   return (
@@ -8,8 +9,9 @@ const ToDoPanel = () => {
 
       <IncomingTasks />
 
-      <div className='h-full grow p-5 overflow-hidden'>
+      <div className='h-full grow p-5 overflow-hidden flex flex-col'>
         <Calendar />
+        <CreateTaskPanel />
       </div>
     </div>
   );

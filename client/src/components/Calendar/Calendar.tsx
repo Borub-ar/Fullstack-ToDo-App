@@ -20,7 +20,7 @@ const Calendar = () => {
   });
 
   return (
-    <div className='flex overflow-auto gap-4'>
+    <div className='flex overflow-auto gap-4 mb-4'>
       {formattedDaysArray.map(day => (
         <DayTile key={day.id} date={day.date} dayName={day.dayName} />
       ))}
