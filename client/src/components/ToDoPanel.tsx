@@ -1,6 +1,6 @@
 import Calendar from './Calendar/Calendar';
 import IncomingTasks from './IncomingTasks/IncomingTasksPanel';
-import CreateTaskPanel from './CreateTask/CreateTaskPanel';
+import CreateTaskPanel from './CreateTaskPanel/CreateTaskPanel';
 
 const ToDoPanel = () => {
   return (

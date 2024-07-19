@@ -2,7 +2,7 @@ import { format, addDays } from 'date-fns';
 
 import DayTile from './DayTile';
 
-const DAYS_TO_SHOW = 5;
+const DAYS_TO_SHOW = 8;
 
 const Calendar = () => {
   const today = new Date();

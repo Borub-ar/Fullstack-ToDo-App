@@ -15,8 +15,10 @@ const DayTile = ({ date, dayName }: DayTileProps) => {
   return (
     <button
       onClick={selectDay}
-      className={`p-3 border-solid  rounded-md flex flex-col items-center ${isSelected ? 'bg-green-200' : 'bg-white'}`}>
-      <p className={`font-bold text-2xl ${dayName === 'Sunday' ? 'text-red-600' : ''}`}>{dayName}</p>
+      className={`p-3 rounded-md flex flex-col border-4 border-solid items-center bg-white ${
+        isSelected ? ' border-clr-red' : 'border-white'
+      }`}>
+      <p className={`font-bold text-2xl ${dayName === 'Sunday' ? 'text-clr-red ' : ''}`}>{dayName}</p>
       <p className='text-stone-800 font-semibold'>{date}</p>
     </button>
   );

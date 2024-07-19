@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         'clr-primary': 'var(--clr-primary)',
+        'clr-red': 'var(--clr-red)',
       },
     },
   },
