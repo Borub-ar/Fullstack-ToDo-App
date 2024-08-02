@@ -4,6 +4,8 @@ import { format, addDays } from 'date-fns';
 import DayTile from './DayTile';
 
 const DAYS_TO_SHOW = 8;
+const DATE_FORMAT = 'dd.MM.yy';
+const DAY_NAME_FORMAT = 'EEEE';
 
 const Calendar = () => {
   const [clickedDateTileIndex, setClickedDateTileIndex] = useState<number | null>(null);
@@ -16,8 +18,8 @@ const Calendar = () => {
 
   const formattedDaysArray = daysArray.map(day => {
     return {
-      date: format(day, 'dd.MM.yy'),
-      dayName: format(day, 'EEEE'),
+      date: format(day, DATE_FORMAT),
+      dayName: format(day, DAY_NAME_FORMAT),
       id: crypto.randomUUID(),
     };
   });
