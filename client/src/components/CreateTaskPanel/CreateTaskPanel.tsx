@@ -8,7 +8,7 @@ const CreateTaskPanel = () => {
       <TextInput title='Task name' id='name' />
       <TextInput title='Task description' id='description' />
 
-      <button className='bg-white rounded-md p-3 font-bold'>Create New Task</button>
+      <button className='bg-white rounded-md p-3 font-bold mt-auto'>Create New Task</button>
     </form>
   );
 };

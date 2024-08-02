@@ -12,7 +12,7 @@ function App() {
       <footer className='mt-auto'>
         <p className='text-zinc-300 font-bold text-center p-4'>
           Created by{' '}
-          <a href='https://github.com/Borub-ar' className='text-clr-primary'>
+          <a href='https://github.com/Borub-ar' target='_blank' className='text-clr-primary'>
             Kacper Barabasz
           </a>
         </p>
