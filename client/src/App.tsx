@@ -5,11 +5,7 @@ import ToDoPanel from './components/ToDoPanel';
 function App() {
   return (
     <main className='h-dvh flex flex-col bg-slate-900'>
-      <img
-        src='../public/images/mountain-background.jpg'
-        alt='Image of mountains'
-        className='relative h-2/6 object-cover'
-      />
+      <img src='../public/images/mountain-background.jpg' alt='Image of mountains' className='h-1/3 object-cover' />
 
       <ToDoPanel></ToDoPanel>
 

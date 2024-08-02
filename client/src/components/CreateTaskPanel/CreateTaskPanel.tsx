@@ -1,16 +1,14 @@
+import TextInput from './TextInput';
+
 const CreateTaskPanel = () => {
   return (
     <form className='bg-slate-600 h-full rounded-md p-4 w-1/2 flex flex-col gap-4 border-2 border-cyan-50 border-solid'>
       <p className='font-bold text-2xl text-white'>Create New Task</p>
 
-      <label htmlFor='title'>Task Type</label>
-      <input id='title' type='text' />
+      <TextInput title='Task name' id='name' />
+      <TextInput title='Task description' id='description' />
 
-      <label htmlFor='description'>Task Type</label>
-      <input id='description' type='text' />
-
-      <label htmlFor='type'>Task Type</label>
-      <input id='type' type='text' />
+      <button className='bg-white rounded-md p-3 font-bold'>Create New Task</button>
     </form>
   );
 };
