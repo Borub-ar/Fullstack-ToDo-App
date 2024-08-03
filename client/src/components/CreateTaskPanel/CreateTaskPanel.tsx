@@ -5,6 +5,8 @@ type CreateTaskPanelProps = {
 };
 
 const CreateTaskPanel = ({ pickedDate }: CreateTaskPanelProps) => {
+  console.log(pickedDate);
+
   return (
     <form
       autoComplete='off'
