@@ -3,11 +3,15 @@ import { format, addDays } from 'date-fns';
 
 import DayTile from './DayTile';
 
-const DAYS_TO_SHOW = 8;
+const DAYS_TO_SHOW = 6;
 const DATE_FORMAT = 'dd.MM.yy';
 const DAY_NAME_FORMAT = 'EEEE';
 
-const Calendar = () => {
+type CalendarProps = {
+  savePickedDay: (day: string) => void;
+};
+
+const Calendar = ({ savePickedDay }: CalendarProps) => {
   const [clickedDateTileIndex, setClickedDateTileIndex] = useState<number | null>(null);
 
   const today = new Date();
@@ -24,8 +28,9 @@ const Calendar = () => {
     };
   });
 
-  const handleTileClick = (index: number) => {
-    setClickedDateTileIndex(index);
+  const handleTileClick = (tileIndex: number, date: string) => {
+    setClickedDateTileIndex(tileIndex);
+    savePickedDay(date);
   };
 
   return (

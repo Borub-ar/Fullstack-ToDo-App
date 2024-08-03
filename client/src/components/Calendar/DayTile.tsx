@@ -3,13 +3,13 @@ type DayTileProps = {
   dayName: string;
   isActive: boolean;
   index: number;
-  onClick: (event: number) => void;
+  onClick: (tileIndex: number, date: string) => void;
 };
 
 const DayTile = ({ date, dayName, isActive, onClick, index }: DayTileProps) => {
   return (
     <button
-      onClick={() => onClick(index)}
+      onClick={() => onClick(index, date)}
       className={`p-3 rounded-md flex flex-col border-4 border-solid items-center bg-white ${
         isActive ? ' border-clr-red' : 'border-white'
       }`}>
