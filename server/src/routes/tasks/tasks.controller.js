@@ -1,4 +1,4 @@
-const { getAllTasks } = require('../../models/tasks.model');
+const { getAllTasks, createNewTask } = require('../../models/tasks.model');
 
 async function httpGetAllTasks(req, res) {
   const allTasks = await getAllTasks();
@@ -10,6 +10,12 @@ async function httpGetAllTasks(req, res) {
   return res.status(200).json([]);
 }
 
+async function httpAddNewTask(req, res) {
+  await createNewTask();
+  return res.status(200).json({ text });
+}
+
 module.exports = {
   httpGetAllTasks,
+  httpAddNewTask,
 };

@@ -1,11 +1,12 @@
 const Task = require('./tasks.mongo');
 
 async function getAllTasks() {
-  return Task.find({});
+  return Task.find({}, { __v: 0, _id: 0 });
 }
 
 async function createNewTask(task) {
   const newTask = new Task(task);
+
   await newTask.save();
 }
 
