@@ -1,9 +1,15 @@
-const tasksDatabase = require('./tasks.mongo');
+const Task = require('./tasks.mongo');
 
 async function getAllTasks() {
-  console.log('All tasks returned');
+  return Task.find({});
 }
 
 async function createNewTask(task) {
-  console.log('New task created');
+    const task = new Task(task);
+    await task.save();
 }
+
+module.exports = {
+  getAllTasks,
+  createNewTask,
+};
