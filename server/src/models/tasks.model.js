@@ -5,8 +5,8 @@ async function getAllTasks() {
 }
 
 async function createNewTask(task) {
-    const task = new Task(task);
-    await task.save();
+  const newTask = new Task(task);
+  await newTask.save();
 }
 
 module.exports = {
