@@ -1,7 +1,7 @@
 const Task = require('./tasks.mongo');
 
 async function getAllTasks() {
-  return Task.find({}, { __v: 0, _id: 0 });
+  return await Task.find({}, { __v: 0, _id: 0 });
 }
 
 async function createNewTask(task) {
