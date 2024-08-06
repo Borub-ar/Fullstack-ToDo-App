@@ -6,7 +6,6 @@ async function getAllTasks() {
 
 async function createNewTask(task) {
   const newTask = new Task(task);
-
   await newTask.save();
 }
 
