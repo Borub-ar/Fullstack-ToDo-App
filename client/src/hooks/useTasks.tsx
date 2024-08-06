@@ -7,7 +7,6 @@ function useTasks() {
 
   const fetchTasks = async () => {
     const response: any = await httpGetTasks();
-
     setTasks(response);
   };
 

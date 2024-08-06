@@ -6,7 +6,14 @@ async function httpGetAllTasks(req, res) {
 }
 
 async function httpAddNewTask(req, res) {
-  await createNewTask();
+    const newTask = {
+      title: req.body.title,
+      description: req.body.description,
+      date: req.body.date,
+      taskId: req.body.taskId,
+    };
+
+  await createNewTask(newTask);
   return res.status(200).json({ text });
 }
 
