@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import { httpGetTasks } from './requests';
 
-function useTasks() {
+function useGetAllTasks() {
   const [tasks, setTasks] = useState([]);
 
   const fetchTasks = async () => {
@@ -17,4 +17,4 @@ function useTasks() {
   return tasks;
 }
 
-export default useTasks;
+export default useGetAllTasks;
