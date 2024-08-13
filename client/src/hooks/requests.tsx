@@ -11,7 +11,7 @@ type Task = {
 const httpGetTasks = async () => {
   try {
     const allTasks = await axios.get(`${BASE_URL}/task`);
-    return allTasks;
+    return allTasks.data;
   } catch (error) {
     console.error(error);
   }

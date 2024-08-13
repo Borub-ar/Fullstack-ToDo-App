@@ -55,6 +55,7 @@ const Calendar = ({ savePickedDay, tasks }: CalendarProps) => {
           key={day.id}
           date={day.date}
           dayName={day.dayName}
+          dayTasks={day.dayTasks}
           isActive={clickedDateTileIndex === index}
           index={index}
           onClick={handleTileClick}
