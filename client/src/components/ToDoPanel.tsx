@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import useTask from '../hooks/useTasks';
 
 import Calendar from './Calendar/Calendar';
 import IncomingTasks from './IncomingTasks/IncomingTasksPanel';
@@ -6,6 +7,7 @@ import CreateTaskPanel from './CreateTaskPanel/CreateTaskPanel';
 
 const ToDoPanel = () => {
   const [pickedDate, setPickedDate] = useState<string | null>(null);
+  const { tasks } = useTask();
 
   const savePickedDay = (day: string) => {
     setPickedDate(day);
@@ -18,7 +20,7 @@ const ToDoPanel = () => {
       <IncomingTasks />
 
       <div className='h-full grow p-5 overflow-hidden flex flex-col'>
-        <Calendar savePickedDay={savePickedDay} />
+        <Calendar tasks={tasks} savePickedDay={savePickedDay} />
         <CreateTaskPanel pickedDate={pickedDate} />
       </div>
     </div>

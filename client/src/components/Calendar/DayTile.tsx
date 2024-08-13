@@ -1,12 +1,20 @@
+type DatabaseTask = {
+  date: string;
+  description: string;
+  title: string;
+  taskId: string;
+};
+
 type DayTileProps = {
   date: string;
   dayName: string;
   isActive: boolean;
   index: number;
   onClick: (tileIndex: number, date: string) => void;
+  dayTasks: DatabaseTask[];
 };
 
-const DayTile = ({ date, dayName, isActive, onClick, index }: DayTileProps) => {
+const DayTile = ({ date, dayName, isActive, onClick, index, dayTasks }: DayTileProps) => {
   return (
     <button
       onClick={() => onClick(index, date)}
@@ -15,6 +23,7 @@ const DayTile = ({ date, dayName, isActive, onClick, index }: DayTileProps) => {
       }`}>
       <p className={`font-bold text-2xl ${dayName === 'Sunday' ? 'text-clr-red ' : ''}`}>{dayName}</p>
       <p className='text-stone-800 font-semibold'>{date}</p>
+      <p>{dayTasks.length}</p>
     </button>
   );
 };

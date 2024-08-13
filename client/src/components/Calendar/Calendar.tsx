@@ -7,23 +7,38 @@ const DAYS_TO_SHOW = 6;
 const DATE_FORMAT = 'dd.MM.yy';
 const DAY_NAME_FORMAT = 'EEEE';
 
-type CalendarProps = {
-  savePickedDay: (day: string) => void;
+type DatabaseTask = {
+  date: string;
+  description: string;
+  title: string;
+  taskId: string;
 };
 
-const Calendar = ({ savePickedDay }: CalendarProps) => {
+type CalendarProps = {
+  savePickedDay: (day: string) => void;
+  tasks: DatabaseTask[];
+};
+
+const Calendar = ({ savePickedDay, tasks }: CalendarProps) => {
   const [clickedDateTileIndex, setClickedDateTileIndex] = useState<number | null>(null);
 
   const today = new Date();
+
+  const findAllTasks = (date: string) => {
+    return tasks.filter(task => task.date === date);
+  };
 
   const daysArray = Array.from({ length: DAYS_TO_SHOW }, (_, index) => {
     return addDays(today, index);
   });
 
   const formattedDaysArray = daysArray.map(day => {
+    const formattedDate = format(day, DATE_FORMAT);
+
     return {
-      date: format(day, DATE_FORMAT),
+      date: formattedDate,
       dayName: format(day, DAY_NAME_FORMAT),
+      dayTasks: findAllTasks(formattedDate),
       id: crypto.randomUUID(),
     };
   });
