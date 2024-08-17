@@ -3,7 +3,7 @@ import { format, addDays } from 'date-fns';
 
 import DayTile from './DayTile';
 
-const DAYS_TO_SHOW = 6;
+const DAYS_TO_SHOW = 20;
 const DATE_FORMAT = 'dd.MM.yy';
 const DAY_NAME_FORMAT = 'EEEE';
 
@@ -49,7 +49,7 @@ const Calendar = ({ savePickedDay, tasks }: CalendarProps) => {
   };
 
   return (
-    <div className='flex overflow-auto gap-4 mb-4'>
+    <div className='flex gap-4 mb-4'>
       {formattedDaysArray.map((day, index) => (
         <DayTile
           key={day.id}

@@ -25,8 +25,8 @@ const CreateTaskPanel = ({ pickedDate }: CreateTaskPanelProps) => {
     <form
       autoComplete='off'
       onSubmit={handleFormSubmit}
-      className='relative bg-slate-600 h-full rounded-md p-4 w-1/2 flex flex-col gap-4 border-2 border-cyan-50 border-solid'>
-      <p className='font-bold text-2xl text-white'>Create New Task</p>
+      className='relative bg-slate-600 h-full rounded-md p-4 w-full flex flex-col gap-4 border-2 border-cyan-50 border-solid'>
+      <h2 className='font-bold text-2xl text-white'>Create New Task</h2>
 
       <TextInput title='Task title' id='title' />
       <TextInput title='Description' id='description' />
