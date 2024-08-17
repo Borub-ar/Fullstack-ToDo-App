@@ -14,7 +14,7 @@ const TasksPanel = ({ tasks = [] }: TasksPanelProps) => {
 
       <div className='flex flex-col gap-4 overflow-y-auto'>
         {tasks.map(task => (
-          <TaskTile taskData={task} />
+          <TaskTile key={task.taskId} taskData={task} />
         ))}
       </div>
 
