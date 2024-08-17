@@ -15,11 +15,11 @@ type DatabaseTask = {
 };
 
 type CalendarProps = {
-  savePickedDay: (day: string) => void;
+  setDateData: (day: string, tasks: DatabaseTask[]) => void;
   tasks: DatabaseTask[];
 };
 
-const Calendar = ({ savePickedDay, tasks }: CalendarProps) => {
+const Calendar = ({ setDateData, tasks }: CalendarProps) => {
   const [clickedDateTileIndex, setClickedDateTileIndex] = useState<number | null>(null);
 
   const today = new Date();
@@ -44,8 +44,10 @@ const Calendar = ({ savePickedDay, tasks }: CalendarProps) => {
   });
 
   const handleTileClick = (tileIndex: number, date: string) => {
+    const pickedDateTasks = findAllTasks(date);
+
     setClickedDateTileIndex(tileIndex);
-    savePickedDay(date);
+    setDateData(date, pickedDateTasks);
   };
 
   return (

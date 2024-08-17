@@ -6,12 +6,22 @@ import IncomingTasks from './IncomingTasks/IncomingTasksPanel';
 import CreateTaskPanel from './CreateTaskPanel/CreateTaskPanel';
 import TasksPanel from './TasksPanel/TasksPanel';
 
+type DatabaseTask = {
+  date: string;
+  description: string;
+  title: string;
+  taskId: string;
+};
+
 const ToDoPanel = () => {
   const [pickedDate, setPickedDate] = useState<string | null>(null);
+  const [pickedDateTasks, setPickedDateTasks] = useState<DatabaseTask[]>([]);
+
   const { tasks } = useTask();
 
-  const savePickedDay = (day: string) => {
+  const setDateData = (day: string, tasks: DatabaseTask[]) => {
     setPickedDate(day);
+    setPickedDateTasks(tasks);
   };
 
   return (
@@ -21,11 +31,11 @@ const ToDoPanel = () => {
       <IncomingTasks />
 
       <div className='h-full grow p-5 overflow-hidden flex flex-col'>
-        <Calendar tasks={tasks} savePickedDay={savePickedDay} />
+        <Calendar tasks={tasks} setDateData={setDateData} />
 
         <div className='grid grid-cols-2 gap-4 h-full'>
           <CreateTaskPanel pickedDate={pickedDate} />
-          <TasksPanel />
+          <TasksPanel tasks={pickedDateTasks} />
         </div>
       </div>
     </div>
