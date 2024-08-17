@@ -1,4 +1,6 @@
-import TaskTile from '../TaskTile';
+import TaskTile from '../Common/TaskTile';
+import Overlay from '../Common/Overlay';
+
 import type { DatabaseTask } from '../../types';
 
 type TasksPanelProps = {
@@ -6,8 +8,6 @@ type TasksPanelProps = {
 };
 
 const TasksPanel = ({ tasks = [] }: TasksPanelProps) => {
-  console.log(tasks);
-
   return (
     <div className='relative bg-slate-600 h-full rounded-md p-4 flex flex-col gap-4 border-2 border-cyan-50 border-solid w-full'>
       <h2 className='font-bold text-2xl text-white'>Tasks</h2>
@@ -17,6 +17,12 @@ const TasksPanel = ({ tasks = [] }: TasksPanelProps) => {
           <TaskTile taskData={task} />
         ))}
       </div>
+
+      {tasks.length === 0 && (
+        <Overlay>
+          <p className='text-white font-bold text-xl mt-6'>EMPTY</p>
+        </Overlay>
+      )}
     </div>
   );
 };

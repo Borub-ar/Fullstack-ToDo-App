@@ -1,4 +1,5 @@
 import TextInput from './TextInput';
+import Overlay from '../Common/Overlay';
 
 import useTask from '../../hooks/useTasks';
 
@@ -35,7 +36,7 @@ const CreateTaskPanel = ({ pickedDate }: CreateTaskPanelProps) => {
 
       {!pickedDate && (
         <>
-          <div className='absolute flex flex-col inset-0 z-10 justify-center items-center bg-slate-900 bg-opacity-90'>
+          <Overlay>
             <svg
               fill='#ffffff'
               height='93px'
@@ -61,7 +62,7 @@ const CreateTaskPanel = ({ pickedDate }: CreateTaskPanelProps) => {
               </g>
             </svg>
             <p className='text-white font-bold text-xl mt-6'>PICK DATE FIRST</p>
-          </div>
+          </Overlay>
         </>
       )}
     </form>
