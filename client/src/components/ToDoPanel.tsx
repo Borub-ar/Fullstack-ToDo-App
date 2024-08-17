@@ -1,17 +1,13 @@
 import { useState } from 'react';
+
 import useTask from '../hooks/useTasks';
+
+import type { DatabaseTask } from '../types';
 
 import Calendar from './Calendar/Calendar';
 import IncomingTasks from './IncomingTasks/IncomingTasksPanel';
 import CreateTaskPanel from './CreateTaskPanel/CreateTaskPanel';
 import TasksPanel from './TasksPanel/TasksPanel';
-
-type DatabaseTask = {
-  date: string;
-  description: string;
-  title: string;
-  taskId: string;
-};
 
 const ToDoPanel = () => {
   const [pickedDate, setPickedDate] = useState<string | null>(null);

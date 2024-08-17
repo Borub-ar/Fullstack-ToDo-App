@@ -1,18 +1,13 @@
 import { useState } from 'react';
 import { format, addDays } from 'date-fns';
 
+import type { DatabaseTask } from '../../types';
+
 import DayTile from './DayTile';
 
 const DAYS_TO_SHOW = 20;
 const DATE_FORMAT = 'dd.MM.yy';
 const DAY_NAME_FORMAT = 'EEEE';
-
-type DatabaseTask = {
-  date: string;
-  description: string;
-  title: string;
-  taskId: string;
-};
 
 type CalendarProps = {
   setDateData: (day: string, tasks: DatabaseTask[]) => void;

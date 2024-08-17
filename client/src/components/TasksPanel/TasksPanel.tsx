@@ -1,11 +1,5 @@
 import TaskTile from '../TaskTile';
-
-type DatabaseTask = {
-  date: string;
-  description: string;
-  title: string;
-  taskId: string;
-};
+import type { DatabaseTask } from '../../types';
 
 type TasksPanelProps = {
   tasks: DatabaseTask[];
