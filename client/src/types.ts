@@ -4,3 +4,9 @@ export type DatabaseTask = {
   title: string;
   taskId: string;
 };
+
+export type RequestTask = {
+  title: string;
+  description: string;
+  date: string;
+};

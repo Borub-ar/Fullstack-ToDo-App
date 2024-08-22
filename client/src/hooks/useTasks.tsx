@@ -2,11 +2,8 @@ import { useState, useEffect, useCallback } from 'react';
 
 import { httpGetTasks, httpCreateNewTask } from './requests';
 
-type Task = {
-  title: string;
-  description: string;
-  date: string;
-};
+import type { RequestTask } from '../types';
+
 
 const useTasks = () => {
   const [tasks, setTasks] = useState([]);
@@ -20,7 +17,7 @@ const useTasks = () => {
     getAllTasks();
   }, [getAllTasks]);
 
-  const createNewTask = async (task: Task) => {
+  const createNewTask = async (task: RequestTask) => {
     const newTask = await httpCreateNewTask(task);
     return newTask;
   };

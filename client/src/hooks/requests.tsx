@@ -1,12 +1,8 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8000';
+import type { RequestTask } from '../types';
 
-type Task = {
-  title: string;
-  description: string;
-  date: string;
-};
+const BASE_URL = 'http://localhost:8000';
 
 const httpGetTasks = async () => {
   try {
@@ -20,7 +16,7 @@ const httpGetTasks = async () => {
   }
 };
 
-const httpCreateNewTask = async (task: Task) => {
+const httpCreateNewTask = async (task: RequestTask) => {
   try {
     const newTask = await axios.post(`${BASE_URL}/task`, task);
     return newTask;
