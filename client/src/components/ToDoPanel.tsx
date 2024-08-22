@@ -13,7 +13,7 @@ const ToDoPanel = () => {
   const [pickedDate, setPickedDate] = useState<string | null>(null);
   const [pickedDateTasks, setPickedDateTasks] = useState<DatabaseTask[]>([]);
 
-  const { tasks } = useTask();
+  const { tasks, getAllTasks } = useTask();
 
   const setDateData = (day: string, tasks: DatabaseTask[]) => {
     setPickedDate(day);
@@ -30,7 +30,7 @@ const ToDoPanel = () => {
         <Calendar tasks={tasks} setDateData={setDateData} />
 
         <div className='grid grid-cols-2 gap-4 h-full'>
-          <CreateTaskPanel pickedDate={pickedDate} />
+          <CreateTaskPanel refreshTasksData={getAllTasks} pickedDate={pickedDate} />
           <TasksPanel tasks={pickedDateTasks} />
         </div>
       </div>

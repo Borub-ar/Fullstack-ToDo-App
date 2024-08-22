@@ -25,7 +25,7 @@ const useTasks = () => {
     return newTask;
   };
 
-  return { tasks, createNewTask };
+  return { tasks, createNewTask, getAllTasks };
 };
 
 export default useTasks;

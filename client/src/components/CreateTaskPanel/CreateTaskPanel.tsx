@@ -7,32 +7,32 @@ import useTask from '../../hooks/useTasks';
 
 type CreateTaskPanelProps = {
   pickedDate: string | null;
+  refreshTasksData: () => void;
 };
 
-const CreateTaskPanel = ({ pickedDate }: CreateTaskPanelProps) => {
+const CreateTaskPanel = ({ pickedDate, refreshTasksData }: CreateTaskPanelProps) => {
   const { createNewTask } = useTask();
 
   const titleInputRef = useRef<HTMLInputElement>(null);
   const descriptionInputRef = useRef<HTMLInputElement>(null);
 
-  const handleFormSubmit = async (event: any) => {
+  const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (pickedDate === null) return;
 
-    try {
-      await createNewTask({
-        title: event.target.title.value,
-        description: event.target.description.value,
-        date: pickedDate,
-      });
+    const form = event.currentTarget;
 
-      resetInputsValue();
-    } catch (err) {
-      console.error(err);
-    }
+    await createNewTask({
+      title: form.title.value,
+      description: form.description.value,
+      date: pickedDate,
+    });
+
+    refreshTasksData();
+    clearInputsValue();
   };
 
-  const resetInputsValue = () => {
+  const clearInputsValue = () => {
     if (titleInputRef.current) titleInputRef.current.value = '';
     if (descriptionInputRef.current) descriptionInputRef.current.value = '';
   };

@@ -14,6 +14,9 @@ const httpGetTasks = async () => {
     return allTasks.data;
   } catch (error) {
     console.error(error);
+    return {
+      ok: false,
+    };
   }
 };
 
@@ -23,6 +26,9 @@ const httpCreateNewTask = async (task: Task) => {
     return newTask;
   } catch (error) {
     console.error(error);
+    return {
+      ok: false,
+    };
   }
 };
 
