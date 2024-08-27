@@ -30,7 +30,7 @@ const ToDoPanel = () => {
         <Calendar tasks={tasks} setDateData={setDateData} />
 
         <div className='grid grid-cols-2 gap-4 h-full'>
-          <CreateTaskPanel refreshTasksData={getAllTasks} pickedDate={pickedDate} />
+          <CreateTaskPanel refreshData={getAllTasks} pickedDate={pickedDate} />
           <TasksPanel tasks={pickedDateTasks} />
         </div>
       </div>

@@ -7,10 +7,10 @@ import useTask from '../../hooks/useTasks';
 
 type CreateTaskPanelProps = {
   pickedDate: string | null;
-  refreshTasksData: () => void;
+  refreshData: () => void;
 };
 
-const CreateTaskPanel = ({ pickedDate, refreshTasksData }: CreateTaskPanelProps) => {
+const CreateTaskPanel = ({ pickedDate, refreshData }: CreateTaskPanelProps) => {
   const { createNewTask } = useTask();
 
   const titleInputRef = useRef<HTMLInputElement>(null);
@@ -28,7 +28,7 @@ const CreateTaskPanel = ({ pickedDate, refreshTasksData }: CreateTaskPanelProps)
       date: pickedDate,
     });
 
-    refreshTasksData();
+    refreshData();
     clearInputsValue();
   };
 
@@ -60,9 +60,9 @@ const CreateTaskPanel = ({ pickedDate, refreshTasksData }: CreateTaskPanelProps)
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 330 330'
             stroke='#ffffff'>
-            <g id='SVGRepo_bgCarrier' stroke-width='0' />
+            <g id='SVGRepo_bgCarrier' strokeWidth='0' />
 
-            <g id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round' />
+            <g id='SVGRepo_tracerCarrier' strokeLinecap='round' strokeLinejoin='round' />
 
             <g id='SVGRepo_iconCarrier'>
               {' '}
